@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLEGateBasic.h"
 
 @interface BLEGateViewController : UIViewController
+
+@property (nonatomic, strong) BLEGateBasic *gate;
 
 @end

@@ -9,6 +9,7 @@
 #import "BLEMainViewController.h"
 #import "BLERESTConnector.h"
 #import "ESTBeaconManager.h"
+#import "BLEGateViewController.h"
 
 static const CLLocationAccuracy kBeaconRangeThreshold = 0.5;
 static const ESTBeaconMajorValue kBeaconMajor = 26814;
@@ -40,6 +41,16 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
   self.beaconManager.delegate = self;
   [self.beaconManager startMonitoringForRegion:region];
   [self p_loadGates];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [table deselectRowAtIndexPath:[table indexPathForSelectedRow] animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSIndexPath *ip = [table indexPathForSelectedRow];
+    BLEGateViewController *destinationViewController = [segue destinationViewController];
+    [destinationViewController setGate:[gatesArray objectAtIndex:ip.row]];
 }
 
 #pragma mark - Internal
@@ -75,6 +86,10 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [gatesArray count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"gateDetails" sender:self];
 }
 
 #pragma mark - ESTBeaconManagerDelegate
