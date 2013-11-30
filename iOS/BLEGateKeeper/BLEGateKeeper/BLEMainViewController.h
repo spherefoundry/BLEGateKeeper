@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BLEBaseViewController.h"
 
-@interface BLEMainViewController : BLEBaseViewController
+@interface BLEMainViewController : BLEBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
