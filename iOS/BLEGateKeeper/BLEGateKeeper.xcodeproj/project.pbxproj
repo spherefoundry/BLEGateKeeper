@@ -20,6 +20,7 @@
 		4217ED21184A03E4006CECDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED1F184A03E4006CECDC /* InfoPlist.strings */; };
 		4217ED23184A03E4006CECDC /* BLEGateKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */; };
 		4217ED2D184A0AA8006CECDC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */; };
+		6D1E1EA0184A0B880033F80D /* libEstimoteSDK7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1E1E9F184A0B880033F80D /* libEstimoteSDK7.a */; };
 		77E2C9CD184A09D4002F07C6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BB184A09D4002F07C6 /* AFHTTPRequestOperation.m */; };
 		77E2C9CE184A09D4002F07C6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BD184A09D4002F07C6 /* AFHTTPRequestOperationManager.m */; };
 		77E2C9CF184A09D4002F07C6 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BF184A09D4002F07C6 /* AFHTTPSessionManager.m */; };
@@ -59,6 +60,11 @@
 		4217ED20184A03E4006CECDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEGateKeeperTests.m; sourceTree = "<group>"; };
 		4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6D1E1E9B184A0B880033F80D /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
+		6D1E1E9C184A0B880033F80D /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
+		6D1E1E9D184A0B880033F80D /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
+		6D1E1E9E184A0B880033F80D /* ESTBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconRegion.h; sourceTree = "<group>"; };
+		6D1E1E9F184A0B880033F80D /* libEstimoteSDK7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEstimoteSDK7.a; sourceTree = "<group>"; };
 		77E2C9BA184A09D4002F07C6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		77E2C9BB184A09D4002F07C6 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		77E2C9BC184A09D4002F07C6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 			files = (
 				4217ED00184A03E4006CECDC /* CoreGraphics.framework in Frameworks */,
 				4217ED02184A03E4006CECDC /* UIKit.framework in Frameworks */,
+				6D1E1EA0184A0B880033F80D /* libEstimoteSDK7.a in Frameworks */,
 				4217ECFE184A03E4006CECDC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +114,7 @@
 		4217ECF1184A03E3006CECDC = {
 			isa = PBXGroup;
 			children = (
+				6D1E1E99184A0B880033F80D /* EstimoteSDK */,
 				77E2C9B9184A09B5002F07C6 /* AFNetworking */,
 				4217ED03184A03E4006CECDC /* BLEGateKeeper */,
 				4217ED1C184A03E4006CECDC /* BLEGateKeeperTests */,
@@ -174,6 +182,26 @@
 				4217ED1F184A03E4006CECDC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D1E1E99184A0B880033F80D /* EstimoteSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6D1E1E9A184A0B880033F80D /* Headers */,
+				6D1E1E9F184A0B880033F80D /* libEstimoteSDK7.a */,
+			);
+			path = EstimoteSDK;
+			sourceTree = "<group>";
+		};
+		6D1E1E9A184A0B880033F80D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				6D1E1E9B184A0B880033F80D /* ESTBeacon.h */,
+				6D1E1E9C184A0B880033F80D /* ESTBeaconDefinitions.h */,
+				6D1E1E9D184A0B880033F80D /* ESTBeaconManager.h */,
+				6D1E1E9E184A0B880033F80D /* ESTBeaconRegion.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		77E2C9B9184A09B5002F07C6 /* AFNetworking */ = {
@@ -431,6 +459,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEGateKeeper/BLEGateKeeper-Prefix.pch";
 				INFOPLIST_FILE = "BLEGateKeeper/BLEGateKeeper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pt/Documents/gitrepos/BLEGateKeeper/iOS/BLEGateKeeper/EstimoteSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,6 +476,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLEGateKeeper/BLEGateKeeper-Prefix.pch";
 				INFOPLIST_FILE = "BLEGateKeeper/BLEGateKeeper-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pt/Documents/gitrepos/BLEGateKeeper/iOS/BLEGateKeeper/EstimoteSDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
