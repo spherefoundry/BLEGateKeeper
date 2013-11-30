@@ -321,7 +321,7 @@
 				ORGANIZATIONNAME = Appvetica;
 				TargetAttributes = {
 					4217ED14184A03E4006CECDC = {
-						TestTargetID = 4217ECF9184A03E4006CECDC;
+						TestTargetID = 4217ECF9184A03E4006CECDC /* BLEGateKeeper */;
 					};
 				};
 			};

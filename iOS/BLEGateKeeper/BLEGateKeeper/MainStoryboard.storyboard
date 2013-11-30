@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="11" y="-446"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="VTw-0R-G94">
             <objects>
-                <viewController id="zvM-wC-g5A" sceneMemberID="viewController">
+                <viewController id="zvM-wC-g5A" customClass="BLEMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qSM-vf-Ci7"/>
                         <viewControllerLayoutGuide type="bottom" id="BBP-Sp-V7s"/>

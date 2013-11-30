@@ -7,32 +7,43 @@
 //
 
 #import "BLEMainViewController.h"
+#import "ESTBeaconManager.h"
 
-@interface BLEMainViewController ()
+static const ESTBeaconMajorValue kBeaconMajor = 26814;
+static const ESTBeaconMinorValue kBeaconMinor = 62718;
+
+@interface BLEMainViewController () <ESTBeaconManagerDelegate>
+
+@property(strong, nonatomic) ESTBeaconManager *beaconManager;
 
 @end
 
 @implementation BLEMainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+#pragma mark - UIViewController lifecycle
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  NSLog(@"Starting beacon monitoring");
+  ESTBeaconRegion *region = [[ESTBeaconRegion alloc] initRegionWithMajor:kBeaconMajor
+                                                                   minor:kBeaconMinor
+                                                              identifier:@"EstimoteSalmpleRegion"];
+  self.beaconManager = [[ESTBeaconManager alloc] init];
+  self.beaconManager.delegate = self;
+  [self.beaconManager startRangingBeaconsInRegion:region];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+#pragma mark - ESTBeaconManagerDelegate
+
+- (void)beaconManager:(ESTBeaconManager *)manager
+      didRangeBeacons:(NSArray *)beacons
+             inRegion:(ESTBeaconRegion *)region {
+  NSLog(@"Found beacons: %@", beacons);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)beaconManager:(ESTBeaconManager *)manager rangingBeaconsDidFailForRegion:(ESTBeaconRegion *)region withError:(NSError *)error {
+  NSLog(@"Failed: %@", error);
 }
+
 
 @end

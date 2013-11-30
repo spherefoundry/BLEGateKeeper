@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLEBaseViewController.h"
 
-@interface BLEMainViewController : UIViewController
+@interface BLEMainViewController : BLEBaseViewController
 
 @end
