@@ -13,6 +13,6 @@
 @property (nonatomic) NSInteger id;
 @property (nonatomic) NSInteger major;
 @property (nonatomic) NSInteger minor;
-@property (nonatomic) NSString *name;
+@property (nonatomic, strong) NSString *name;
 
 @end

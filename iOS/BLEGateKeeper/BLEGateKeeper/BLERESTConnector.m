@@ -52,7 +52,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager GET:[@"http://10.0.3.155:5000/gate/" stringByAppendingFormat:@"%d", gateId] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"http://10.0.3.155:5000/gate/%d/", gateId] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", responseObject);
         BLEGate *gate = [[BLEGate alloc] init];
         [gate setValuesForKeysWithDictionary:responseObject];
@@ -60,12 +60,24 @@
     } failure:nil];
 }
 
--(void)openGate {
-    
+-(void)openGateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *))success {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager POST:[NSString stringWithFormat:@"http://10.0.3.155:5000/gate/%d/", gateId] parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"open", @"action", nil] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BLEGate *gate = [[BLEGate alloc] init];
+        [gate setValuesForKeysWithDictionary:responseObject];
+        success(gate);
+    } failure:nil];
 }
 
--(void)closeGate {
-    
+-(void)closeGateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *))success {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager POST:[NSString stringWithFormat:@"http://10.0.3.155:5000/gate/%d/", gateId] parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"close", @"action", nil] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        BLEGate *gate = [[BLEGate alloc] init];
+        [gate setValuesForKeysWithDictionary:responseObject];
+        success(gate);
+    } failure:nil];
 }
 
 @end

@@ -13,14 +13,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //[self test]
+    return YES;
+}
+
+-(void)test {
     BLERESTConnector *restConnector = [[BLERESTConnector alloc] init];
     [restConnector gatesWithSuccess:^(NSArray *gates) {
         for (BLEGateBasic *gateBasic in gates) {
             NSLog(@"id = %d, major = %d, minor = %d, name = %@\n", gateBasic.id, gateBasic.major, gateBasic.minor, gateBasic.name);
         }
     }];
-
-    return YES;
+    
+    [restConnector gateForId:2 withSuccess:^(BLEGate *gate) {
+        NSLog(@"TEST SINGLE: id = %d, major = %d, minor = %d, name = %@\n", gate.id, gate.major, gate.minor, gate.name);
+    }];
+    
+    [restConnector openGateForId:1 withSuccess:^(BLEGate *gate) {
+        NSLog(@"STATE OF A GATE: %d", gate.state);
+    }];
+    [restConnector closeGateForId:1 withSuccess:^(BLEGate *gate) {
+        NSLog(@"STATE OF A GATE: %d", gate.state);
+    }];
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {

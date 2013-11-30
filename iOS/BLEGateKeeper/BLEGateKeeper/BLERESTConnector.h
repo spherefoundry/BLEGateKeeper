@@ -13,7 +13,7 @@
 
 -(void)gatesWithSuccess:(void (^)(NSArray *gates))success;
 -(void)gateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *gate))success;
--(void)openGate;
--(void)closeGate;
+-(void)openGateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *gate))success;
+-(void)closeGateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *gate))success;
 
 @end

@@ -11,6 +11,6 @@
 
 @interface BLEGate : BLEGateBasic
 
-@property (nonatomic, strong) NSString *gateId;
+@property (nonatomic) BOOL state;
 
 @end
