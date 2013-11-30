@@ -51,9 +51,9 @@ def setup_model(app):
     model.session.add(admin)
     model.session.add(guest)
 
-    gate1 = Gate('blueberry pie gate', 26814, 62718)
-    gate2 = Gate('icy marshmallow gate', 8465, 32408)
-    gate3 = Gate('mint cocktail gate', 18601, 52329)
+    gate1 = Gate('blueberry pie gate', 26814, 1)
+    gate2 = Gate('icy marshmallow gate', 26814, 2)
+    gate3 = Gate('mint cocktail gate', 26814, 3)
 
     model.session.add(gate1)
     model.session.add(gate2)
