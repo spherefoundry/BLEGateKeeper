@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BLEGate.h"
 
 @interface BLERESTConnector : NSObject
+
+-(void)gatesWithSuccess:(void (^)(NSArray *gates))success;
+-(void)gateForId:(NSInteger)gateId withSuccess:(void (^)(BLEGate *gate))success;
+-(void)openGate;
+-(void)closeGate;
 
 @end

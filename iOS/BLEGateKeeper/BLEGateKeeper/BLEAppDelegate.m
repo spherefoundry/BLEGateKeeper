@@ -7,11 +7,18 @@
 //
 
 #import "BLEAppDelegate.h"
+#import "BLERESTConnector.h"
 
 @implementation BLEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    BLERESTConnector *restConnector = [[BLERESTConnector alloc] init];
+    [restConnector gatesWithSuccess:^(NSArray *gates) {
+        for (BLEGateBasic *gateBasic in gates) {
+            NSLog(@"id = %d, major = %d, minor = %d, name = %@\n", gateBasic.id, gateBasic.major, gateBasic.minor, gateBasic.name);
+        }
+    }];
     return YES;
 }
 

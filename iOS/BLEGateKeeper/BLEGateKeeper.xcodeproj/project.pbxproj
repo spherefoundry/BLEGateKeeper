@@ -32,6 +32,9 @@
 		77E2C9D3184A09D4002F07C6 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9C8184A09D4002F07C6 /* AFURLRequestSerialization.m */; };
 		77E2C9D4184A09D4002F07C6 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9CA184A09D4002F07C6 /* AFURLResponseSerialization.m */; };
 		77E2C9D5184A09D4002F07C6 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9CC184A09D4002F07C6 /* AFURLSessionManager.m */; };
+		77E2C9E5184A16D4002F07C6 /* BLERESTConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9E4184A16D3002F07C6 /* BLERESTConnector.m */; };
+		77E2C9EB184A16E2002F07C6 /* BLEGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9E8184A16E2002F07C6 /* BLEGate.m */; };
+		77E2C9EC184A16E2002F07C6 /* BLEGateBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9EA184A16E2002F07C6 /* BLEGateBasic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,12 @@
 		77E2C9CA184A09D4002F07C6 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		77E2C9CB184A09D4002F07C6 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		77E2C9CC184A09D4002F07C6 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		77E2C9E3184A16D3002F07C6 /* BLERESTConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLERESTConnector.h; sourceTree = "<group>"; };
+		77E2C9E4184A16D3002F07C6 /* BLERESTConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLERESTConnector.m; sourceTree = "<group>"; };
+		77E2C9E7184A16E2002F07C6 /* BLEGate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEGate.h; sourceTree = "<group>"; };
+		77E2C9E8184A16E2002F07C6 /* BLEGate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEGate.m; sourceTree = "<group>"; };
+		77E2C9E9184A16E2002F07C6 /* BLEGateBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEGateBasic.h; sourceTree = "<group>"; };
+		77E2C9EA184A16E2002F07C6 /* BLEGateBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEGateBasic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +161,7 @@
 		4217ED03184A03E4006CECDC /* BLEGateKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				77E2C9E2184A16C7002F07C6 /* REST */,
 				4217ED0C184A03E4006CECDC /* BLEAppDelegate.h */,
 				4217ED0D184A03E4006CECDC /* BLEAppDelegate.m */,
 				4217ED0F184A03E4006CECDC /* Images.xcassets */,
@@ -272,6 +282,27 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		77E2C9E2184A16C7002F07C6 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				77E2C9E6184A16D7002F07C6 /* dto */,
+				77E2C9E3184A16D3002F07C6 /* BLERESTConnector.h */,
+				77E2C9E4184A16D3002F07C6 /* BLERESTConnector.m */,
+			);
+			name = REST;
+			sourceTree = "<group>";
+		};
+		77E2C9E6184A16D7002F07C6 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				77E2C9E7184A16E2002F07C6 /* BLEGate.h */,
+				77E2C9E8184A16E2002F07C6 /* BLEGate.m */,
+				77E2C9E9184A16E2002F07C6 /* BLEGateBasic.h */,
+				77E2C9EA184A16E2002F07C6 /* BLEGateBasic.m */,
+			);
+			name = dto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,7 +352,7 @@
 				ORGANIZATIONNAME = Appvetica;
 				TargetAttributes = {
 					4217ED14184A03E4006CECDC = {
-						TestTargetID = 4217ECF9184A03E4006CECDC /* BLEGateKeeper */;
+						TestTargetID = 4217ECF9184A03E4006CECDC;
 					};
 				};
 			};
@@ -373,15 +404,18 @@
 				77E2C9D2184A09D4002F07C6 /* AFURLConnectionOperation.m in Sources */,
 				77E2C9D1184A09D4002F07C6 /* AFSecurityPolicy.m in Sources */,
 				77E2C9CD184A09D4002F07C6 /* AFHTTPRequestOperation.m in Sources */,
+				77E2C9EB184A16E2002F07C6 /* BLEGate.m in Sources */,
 				77E2C9D5184A09D4002F07C6 /* AFURLSessionManager.m in Sources */,
 				77E2C9D4184A09D4002F07C6 /* AFURLResponseSerialization.m in Sources */,
 				4217ED0E184A03E4006CECDC /* BLEAppDelegate.m in Sources */,
 				4217ED30184A0EB7006CECDC /* BLEBaseViewController.m in Sources */,
 				4217ED36184A0EDE006CECDC /* BLEMainViewController.m in Sources */,
+				77E2C9E5184A16D4002F07C6 /* BLERESTConnector.m in Sources */,
 				77E2C9CF184A09D4002F07C6 /* AFHTTPSessionManager.m in Sources */,
 				77E2C9CE184A09D4002F07C6 /* AFHTTPRequestOperationManager.m in Sources */,
 				77E2C9D0184A09D4002F07C6 /* AFNetworkReachabilityManager.m in Sources */,
 				4217ED0A184A03E4006CECDC /* main.m in Sources */,
+				77E2C9EC184A16E2002F07C6 /* BLEGateBasic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
