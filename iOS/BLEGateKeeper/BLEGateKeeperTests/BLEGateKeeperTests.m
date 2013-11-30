@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "BLERESTConnector.h"
 
 @interface BLEGateKeeperTests : XCTestCase
 
@@ -28,7 +29,12 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    BLERESTConnector *restConnector = [[BLERESTConnector alloc] init];
+    [restConnector gatesWithSuccess:^(NSArray *gates) {
+        for (BLEGateBasic *gateBasic in gates) {
+            NSLog(@"id = %d, major = %d, minor = %d, name = %@\n", gateBasic.id, gateBasic.major, gateBasic.minor, gateBasic.name);
+        }
+    }];
 }
 
 @end
