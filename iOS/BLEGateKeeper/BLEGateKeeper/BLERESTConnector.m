@@ -33,13 +33,13 @@
 -(void)gatesWithSuccess:(void (^)(NSArray *))success {
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    //manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:@"http://10.0.3.155:5000/gate/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", responseObject);
         NSMutableArray *gates = [[NSMutableArray alloc] init];
         for (NSDictionary *jsonGate in responseObject) {
             BLEGateBasic *gate = [[BLEGateBasic alloc] init];
-            [gate setValuesForKeysWithDictionary:responseObject];
+            [gate setValuesForKeysWithDictionary:jsonGate];
             [gates addObject:gate];
         }
         success(gates);

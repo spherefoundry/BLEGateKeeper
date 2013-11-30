@@ -19,6 +19,7 @@
             NSLog(@"id = %d, major = %d, minor = %d, name = %@\n", gateBasic.id, gateBasic.major, gateBasic.minor, gateBasic.name);
         }
     }];
+
     return YES;
 }
 
