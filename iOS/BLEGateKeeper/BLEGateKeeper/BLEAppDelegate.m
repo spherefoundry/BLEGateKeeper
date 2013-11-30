@@ -8,11 +8,13 @@
 
 #import "BLEAppDelegate.h"
 #import "BLERESTConnector.h"
+#import "BLEGatesService.h"
 
 @implementation BLEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[[BLEGatesService alloc] init] persistGates];
     //[self test]
     return YES;
 }
@@ -35,6 +37,8 @@
     [restConnector closeGateForId:1 withSuccess:^(BLEGate *gate) {
         NSLog(@"STATE OF A GATE: %d", gate.state);
     }];
+    
+    NSInteger gateId = [[[BLEGatesService alloc] init] gateIdForMajor:1 minor:1];
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
