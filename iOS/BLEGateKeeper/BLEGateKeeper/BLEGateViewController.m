@@ -25,6 +25,12 @@
 #pragma mark - actions
 
 -(IBAction)segmentedControllValueChanged:(UISegmentedControl *)sender{
-    
+    if (sender.selectedSegmentIndex == 0) {
+        //off
+        
+    }else{
+        //on
+        
+    }
 }
 @end
