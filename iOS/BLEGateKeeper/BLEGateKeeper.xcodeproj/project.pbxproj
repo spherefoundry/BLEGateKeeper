@@ -461,7 +461,7 @@
 				INFOPLIST_FILE = "BLEGateKeeper/BLEGateKeeper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/pt/Documents/gitrepos/BLEGateKeeper/iOS/BLEGateKeeper/EstimoteSDK,
+					"$(SRCROOT)/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -478,7 +478,7 @@
 				INFOPLIST_FILE = "BLEGateKeeper/BLEGateKeeper-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/pt/Documents/gitrepos/BLEGateKeeper/iOS/BLEGateKeeper/EstimoteSDK,
+					"$(SRCROOT)/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
