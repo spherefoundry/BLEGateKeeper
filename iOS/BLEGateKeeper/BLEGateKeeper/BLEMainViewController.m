@@ -7,6 +7,7 @@
 //
 
 #import "BLEMainViewController.h"
+#import "BLERESTConnector.h"
 #import "ESTBeaconManager.h"
 
 static const CLLocationAccuracy kBeaconRangeThreshold = 0.5;
@@ -21,6 +22,7 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
 @property(strong, nonatomic) ESTBeaconManager *beaconManager;
 
 -(void)p_showGateNotification;
+-(void)p_loadGates;
 
 @end
 
@@ -37,9 +39,21 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
   self.beaconManager = [[ESTBeaconManager alloc] init];
   self.beaconManager.delegate = self;
   [self.beaconManager startMonitoringForRegion:region];
+  [self p_loadGates];
 }
 
 #pragma mark - Internal
+#pragma mark Data loading
+
+-(void)p_loadGates {
+  BLERESTConnector *restConnector = [[BLERESTConnector alloc] init];
+  [restConnector gatesWithSuccess:^(NSArray *gates) {
+    gatesArray = gates;
+    [table reloadData];
+  }];
+
+}
+
 #pragma mark Local notifications
 
 - (void)p_showGateNotification {
@@ -53,10 +67,11 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    
-    
-    
-    return cell;
+  
+  BLEGateBasic *gate = gatesArray[indexPath.row];
+  cell.textLabel.text = gate.name;
+  
+  return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [gatesArray count];
