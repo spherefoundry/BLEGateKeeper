@@ -36,6 +36,7 @@
 		77E2C9E5184A16D4002F07C6 /* BLERESTConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9E4184A16D3002F07C6 /* BLERESTConnector.m */; };
 		77E2C9EB184A16E2002F07C6 /* BLEGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9E8184A16E2002F07C6 /* BLEGate.m */; };
 		77E2C9EC184A16E2002F07C6 /* BLEGateBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9EA184A16E2002F07C6 /* BLEGateBasic.m */; };
+		77E2C9F2184A2ECB002F07C6 /* BLEGatesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9F1184A2ECB002F07C6 /* BLEGatesService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		77E2C9E8184A16E2002F07C6 /* BLEGate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEGate.m; sourceTree = "<group>"; };
 		77E2C9E9184A16E2002F07C6 /* BLEGateBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEGateBasic.h; sourceTree = "<group>"; };
 		77E2C9EA184A16E2002F07C6 /* BLEGateBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEGateBasic.m; sourceTree = "<group>"; };
+		77E2C9F0184A2ECB002F07C6 /* BLEGatesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEGatesService.h; sourceTree = "<group>"; };
+		77E2C9F1184A2ECB002F07C6 /* BLEGatesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEGatesService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 		4217ED03184A03E4006CECDC /* BLEGateKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				77E2C9F0184A2ECB002F07C6 /* BLEGatesService.h */,
+				77E2C9F1184A2ECB002F07C6 /* BLEGatesService.m */,
 				77E2C9E2184A16C7002F07C6 /* REST */,
 				4217ED0C184A03E4006CECDC /* BLEAppDelegate.h */,
 				4217ED0D184A03E4006CECDC /* BLEAppDelegate.m */,
@@ -372,7 +377,7 @@
 						};
 					};
 					4217ED14184A03E4006CECDC = {
-						TestTargetID = 4217ECF9184A03E4006CECDC /* BLEGateKeeper */;
+						TestTargetID = 4217ECF9184A03E4006CECDC;
 					};
 				};
 			};
@@ -426,6 +431,7 @@
 				6D1E1EA4184A2A860033F80D /* BLEGateViewController.m in Sources */,
 				77E2C9CD184A09D4002F07C6 /* AFHTTPRequestOperation.m in Sources */,
 				77E2C9EB184A16E2002F07C6 /* BLEGate.m in Sources */,
+				77E2C9F2184A2ECB002F07C6 /* BLEGatesService.m in Sources */,
 				77E2C9D5184A09D4002F07C6 /* AFURLSessionManager.m in Sources */,
 				77E2C9D4184A09D4002F07C6 /* AFURLResponseSerialization.m in Sources */,
 				4217ED0E184A03E4006CECDC /* BLEAppDelegate.m in Sources */,
