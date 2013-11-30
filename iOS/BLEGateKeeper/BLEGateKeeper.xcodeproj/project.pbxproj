@@ -320,8 +320,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Appvetica;
 				TargetAttributes = {
+					4217ECF9184A03E4006CECDC = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					4217ED14184A03E4006CECDC = {
-						TestTargetID = 4217ECF9184A03E4006CECDC /* BLEGateKeeper */;
+						TestTargetID = 4217ECF9184A03E4006CECDC;
 					};
 				};
 			};

@@ -9,12 +9,15 @@
 #import "BLEMainViewController.h"
 #import "ESTBeaconManager.h"
 
+static const CLLocationAccuracy kBeaconRangeThreshold = 0.5;
 static const ESTBeaconMajorValue kBeaconMajor = 26814;
 static const ESTBeaconMinorValue kBeaconMinor = 62718;
 
 @interface BLEMainViewController () <ESTBeaconManagerDelegate>
 
 @property(strong, nonatomic) ESTBeaconManager *beaconManager;
+
+-(void)p_showGateNotificationWithBeaconId:(NSUInteger)beaconId;
 
 @end
 
@@ -27,18 +30,33 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
   NSLog(@"Starting beacon monitoring");
   ESTBeaconRegion *region = [[ESTBeaconRegion alloc] initRegionWithMajor:kBeaconMajor
                                                                    minor:kBeaconMinor
-                                                              identifier:@"EstimoteSalmpleRegion"];
+                                                              identifier:@"EstimoteSampleRegion"];
   self.beaconManager = [[ESTBeaconManager alloc] init];
   self.beaconManager.delegate = self;
-  [self.beaconManager startRangingBeaconsInRegion:region];
+  [self.beaconManager startMonitoringForRegion:region];
+}
+
+#pragma mark - Internal
+#pragma mark Local notifications
+
+- (void)p_showGateNotificationWithBeaconId:(NSUInteger)beaconId {
+  UILocalNotification *notification = [[UILocalNotification alloc] init];
+  [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 #pragma mark - ESTBeaconManagerDelegate
 
+- (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region {
+  NSLog(@"Did enter region: %@", region);
+}
+
 - (void)beaconManager:(ESTBeaconManager *)manager
       didRangeBeacons:(NSArray *)beacons
              inRegion:(ESTBeaconRegion *)region {
-  NSLog(@"Found beacons: %@", beacons);
+  if([beacons count] > 0) {
+    ESTBeacon *beacon = beacons[0];
+    NSLog(@"Distance: %f", beacon.ibeacon.accuracy);
+  }
 }
 
 -(void)beaconManager:(ESTBeaconManager *)manager rangingBeaconsDidFailForRegion:(ESTBeaconRegion *)region withError:(NSError *)error {
