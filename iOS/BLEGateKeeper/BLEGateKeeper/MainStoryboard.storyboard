@@ -45,6 +45,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="llv-Zq-WYh"/>
                     <connections>
+                        <outlet property="table" destination="ZhM-9n-GmF" id="oSv-9E-gzc"/>
                         <segue destination="vrm-np-xEY" kind="push" identifier="gateDetails" id="OU9-0j-qxZ"/>
                     </connections>
                 </viewController>
@@ -52,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="457" y="-446"/>
         </scene>
-        <!--View Controller-->
+        <!--Gate View Controller-->
         <scene sceneID="tgP-bw-kDz">
             <objects>
-                <viewController id="vrm-np-xEY" sceneMemberID="viewController">
+                <viewController id="vrm-np-xEY" customClass="BLEGateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U9y-G3-5Li"/>
                         <viewControllerLayoutGuide type="bottom" id="nhx-8g-feP"/>
@@ -71,6 +72,9 @@
                                     <segment title="Open"/>
                                     <segment title="Close"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControllValueChanged:" destination="vrm-np-xEY" eventType="valueChanged" id="FSe-Df-kJN"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BLEGateViewController : UITableViewController
+@interface BLEGateViewController : UIViewController
 
 @end
