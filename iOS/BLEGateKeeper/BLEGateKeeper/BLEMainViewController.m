@@ -17,7 +17,7 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
 
 @property(strong, nonatomic) ESTBeaconManager *beaconManager;
 
--(void)p_showGateNotificationWithBeaconId:(NSUInteger)beaconId;
+-(void)p_showGateNotification;
 
 @end
 
@@ -39,8 +39,9 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
 #pragma mark - Internal
 #pragma mark Local notifications
 
-- (void)p_showGateNotificationWithBeaconId:(NSUInteger)beaconId {
+- (void)p_showGateNotification {
   UILocalNotification *notification = [[UILocalNotification alloc] init];
+  notification.alertBody = @"This is a test";
   [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
@@ -48,6 +49,7 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
 
 - (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region {
   NSLog(@"Did enter region: %@", region);
+  [self p_showGateNotification];
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager
