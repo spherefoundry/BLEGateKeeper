@@ -80,6 +80,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="b4R-7p-Bfv"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="BWX-xv-JQy" id="RqJ-IY-2Zm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0t-w3-uUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

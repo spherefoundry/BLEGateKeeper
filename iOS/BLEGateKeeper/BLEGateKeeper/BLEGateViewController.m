@@ -38,6 +38,11 @@
     [restConnector gateForId:[self.gate id] withSuccess:^(BLEGate *gate) {
         NSLog(@"TEST SINGLE: id = %d, major = %d, minor = %d, name = %@\n", gate.id, gate.major, gate.minor, gate.name);
         
+//        if (gate.state) {
+//            [segmentedControl setSelectedSegmentIndex:1];
+//        }else{
+//            [segmentedControl setSelectedSegmentIndex:1];
+//        }
         [segmentedControl setSelectedSegmentIndex:gate.state];
     }];
 }
