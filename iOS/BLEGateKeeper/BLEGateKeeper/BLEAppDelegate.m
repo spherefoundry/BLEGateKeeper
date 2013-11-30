@@ -45,6 +45,11 @@
                                         cancelButtonTitle:@"OK"
                                         otherButtonTitles:nil];
   [alert show];
+  
+  BLERESTConnector *restConnector = [[BLERESTConnector alloc] init];
+  [restConnector openGateForId:1 withSuccess:^(BLEGate *gate) {
+    NSLog(@"STATE OF A GATE: %d", gate.state);
+  }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
