@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GateView</title>
+
+    <script src="{{ url_for('static', filename='jquery-2.0.3.min.js') }}"></script>
+    <script type="text/javascript">
+    function setupRefresh() {
+      setTimeout("refreshPage();", 1000);
+    }
+
+    function refreshPage() {
+        setTimeout("refreshPage();",1000);
+        $.get('{{ url_for('gate_control', gate_id=gate_id) }}', function(data) {
+            if(data['state']){
+                $('#content_div').html('open');
+            } else {
+                $('#content_div').html('closed');
+            }
+        });
+    }
+    </script>
+
+</head>
+<body onload="setupRefresh()">
+
+<h1 id="content_div"></h1>
+
+</body>
+</html>

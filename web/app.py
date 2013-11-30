@@ -31,11 +31,9 @@ def user_for_request():
     return user
 
 
-@app.route("/token")
-def gates():
-    resp = make_response(render_template('mce.manifest'))
-    resp.headers['Content-Type'] = 'application/json'
-    return resp
+@app.route("/gate/view/<int:gate_id>/")
+def gate_view(gate_id):
+    return render_template('gate_view.html', gate_id=gate_id)
 
 @app.route("/gate/list")
 def gate_list():
