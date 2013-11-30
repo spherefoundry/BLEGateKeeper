@@ -13,7 +13,10 @@ static const CLLocationAccuracy kBeaconRangeThreshold = 0.5;
 static const ESTBeaconMajorValue kBeaconMajor = 26814;
 static const ESTBeaconMinorValue kBeaconMinor = 62718;
 
-@interface BLEMainViewController () <ESTBeaconManagerDelegate>
+@interface BLEMainViewController () <ESTBeaconManagerDelegate>{
+    IBOutlet UITableView *table;
+    NSArray *gatesArray;
+}
 
 @property(strong, nonatomic) ESTBeaconManager *beaconManager;
 
@@ -43,6 +46,20 @@ static const ESTBeaconMinorValue kBeaconMinor = 62718;
   UILocalNotification *notification = [[UILocalNotification alloc] init];
   notification.alertBody = @"This is a test";
   [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+#pragma mark - tableview
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    
+    
+    return cell;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [gatesArray count];
 }
 
 #pragma mark - ESTBeaconManagerDelegate
