@@ -19,6 +19,7 @@
 		4217ED19184A03E4006CECDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4217ED01184A03E4006CECDC /* UIKit.framework */; };
 		4217ED21184A03E4006CECDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED1F184A03E4006CECDC /* InfoPlist.strings */; };
 		4217ED23184A03E4006CECDC /* BLEGateKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */; };
+		4217ED2D184A0AA8006CECDC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */; };
 		77E2C9CD184A09D4002F07C6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BB184A09D4002F07C6 /* AFHTTPRequestOperation.m */; };
 		77E2C9CE184A09D4002F07C6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BD184A09D4002F07C6 /* AFHTTPRequestOperationManager.m */; };
 		77E2C9CF184A09D4002F07C6 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BF184A09D4002F07C6 /* AFHTTPSessionManager.m */; };
@@ -57,6 +58,7 @@
 		4217ED1E184A03E4006CECDC /* BLEGateKeeperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BLEGateKeeperTests-Info.plist"; sourceTree = "<group>"; };
 		4217ED20184A03E4006CECDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEGateKeeperTests.m; sourceTree = "<group>"; };
+		4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		77E2C9BA184A09D4002F07C6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		77E2C9BB184A09D4002F07C6 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		77E2C9BC184A09D4002F07C6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				4217ED06184A03E4006CECDC /* InfoPlist.strings */,
 				4217ED09184A03E4006CECDC /* main.m */,
 				4217ED0B184A03E4006CECDC /* BLEGateKeeper-Prefix.pch */,
+				4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4217ED2D184A0AA8006CECDC /* MainStoryboard.storyboard in Resources */,
 				4217ED08184A03E4006CECDC /* InfoPlist.strings in Resources */,
 				4217ED10184A03E4006CECDC /* Images.xcassets in Resources */,
 			);
