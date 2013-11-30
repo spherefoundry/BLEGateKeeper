@@ -20,6 +20,8 @@
 		4217ED21184A03E4006CECDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED1F184A03E4006CECDC /* InfoPlist.strings */; };
 		4217ED23184A03E4006CECDC /* BLEGateKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */; };
 		4217ED2D184A0AA8006CECDC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */; };
+		4217ED30184A0EB7006CECDC /* BLEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4217ED2F184A0EB7006CECDC /* BLEBaseViewController.m */; };
+		4217ED36184A0EDE006CECDC /* BLEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4217ED35184A0EDE006CECDC /* BLEMainViewController.m */; };
 		6D1E1EA0184A0B880033F80D /* libEstimoteSDK7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1E1E9F184A0B880033F80D /* libEstimoteSDK7.a */; };
 		77E2C9CD184A09D4002F07C6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BB184A09D4002F07C6 /* AFHTTPRequestOperation.m */; };
 		77E2C9CE184A09D4002F07C6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E2C9BD184A09D4002F07C6 /* AFHTTPRequestOperationManager.m */; };
@@ -60,6 +62,10 @@
 		4217ED20184A03E4006CECDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4217ED22184A03E4006CECDC /* BLEGateKeeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEGateKeeperTests.m; sourceTree = "<group>"; };
 		4217ED2C184A0AA8006CECDC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4217ED2E184A0EB7006CECDC /* BLEBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEBaseViewController.h; sourceTree = "<group>"; };
+		4217ED2F184A0EB7006CECDC /* BLEBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEBaseViewController.m; sourceTree = "<group>"; };
+		4217ED34184A0EDE006CECDC /* BLEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEMainViewController.h; sourceTree = "<group>"; };
+		4217ED35184A0EDE006CECDC /* BLEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEMainViewController.m; sourceTree = "<group>"; };
 		6D1E1E9B184A0B880033F80D /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
 		6D1E1E9C184A0B880033F80D /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
 		6D1E1E9D184A0B880033F80D /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				4217ED0D184A03E4006CECDC /* BLEAppDelegate.m */,
 				4217ED0F184A03E4006CECDC /* Images.xcassets */,
 				4217ED04184A03E4006CECDC /* Supporting Files */,
+				4217ED31184A0EBF006CECDC /* Controllers */,
 			);
 			path = BLEGateKeeper;
 			sourceTree = "<group>";
@@ -182,6 +189,41 @@
 				4217ED1F184A03E4006CECDC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4217ED31184A0EBF006CECDC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4217ED32184A0EC8006CECDC /* View Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4217ED32184A0EC8006CECDC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4217ED33184A0ED1006CECDC /* BLEBaseViewController */,
+				4217ED37184A0EE2006CECDC /* BLEMainViewController */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4217ED33184A0ED1006CECDC /* BLEBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4217ED2E184A0EB7006CECDC /* BLEBaseViewController.h */,
+				4217ED2F184A0EB7006CECDC /* BLEBaseViewController.m */,
+			);
+			name = BLEBaseViewController;
+			sourceTree = "<group>";
+		};
+		4217ED37184A0EE2006CECDC /* BLEMainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4217ED34184A0EDE006CECDC /* BLEMainViewController.h */,
+				4217ED35184A0EDE006CECDC /* BLEMainViewController.m */,
+			);
+			name = BLEMainViewController;
 			sourceTree = "<group>";
 		};
 		6D1E1E99184A0B880033F80D /* EstimoteSDK */ = {
@@ -334,6 +376,8 @@
 				77E2C9D5184A09D4002F07C6 /* AFURLSessionManager.m in Sources */,
 				77E2C9D4184A09D4002F07C6 /* AFURLResponseSerialization.m in Sources */,
 				4217ED0E184A03E4006CECDC /* BLEAppDelegate.m in Sources */,
+				4217ED30184A0EB7006CECDC /* BLEBaseViewController.m in Sources */,
+				4217ED36184A0EDE006CECDC /* BLEMainViewController.m in Sources */,
 				77E2C9CF184A09D4002F07C6 /* AFHTTPSessionManager.m in Sources */,
 				77E2C9CE184A09D4002F07C6 /* AFHTTPRequestOperationManager.m in Sources */,
 				77E2C9D0184A09D4002F07C6 /* AFNetworkReachabilityManager.m in Sources */,
